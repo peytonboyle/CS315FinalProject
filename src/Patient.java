@@ -11,8 +11,9 @@ public class Patient extends Instance
     private boolean admitted;
     private int primaryDoctorID=0;
 
-    public Patient()
+    public Patient( int id)
     {
+      super(id);
     }
 
 
