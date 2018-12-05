@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class InstanceCreator
 {
     public static Instance create(String type)
@@ -5,7 +7,10 @@ public class InstanceCreator
         Instance instance = null;
         if( type == "patient")
         {
-            instance = new Patient();
+        }
+        if( type == "MedicalRecord")
+        {
+            instance = new MedicalRecord();
         }
         return instance;
     }
