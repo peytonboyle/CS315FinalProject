@@ -6,7 +6,7 @@ public abstract class DBSQL
 {
     public DBConnection dbConnection;
 
-    public DBQuery( DBConnection dbConnection)
+    public DBSQL( DBConnection dbConnection)
     {
         this.dbConnection = dbConnection;
     }
