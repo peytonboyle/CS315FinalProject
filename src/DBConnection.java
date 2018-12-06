@@ -27,5 +27,5 @@ public class DBConnection
     public Statement getStatement()
     {
         return statement;
-    }
+    } //peyton
 }

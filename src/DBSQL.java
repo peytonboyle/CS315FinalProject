@@ -4,10 +4,9 @@ import java.sql.Statement;
 
 public abstract class DBSQL
 {
-    private DBConnection dbConnection;
-    public Statement statement;
+    public DBConnection dbConnection;
 
-    public DBSQL(DBConnection dbConnection)
+    public DBQuery( DBConnection dbConnection)
     {
         this.dbConnection = dbConnection;
     }

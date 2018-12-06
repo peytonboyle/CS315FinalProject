@@ -1,7 +1,10 @@
 public abstract class Instance
 {
     private int id;
-
+    public Instance(int id)
+    {
+      this.id = id;
+    }
     public int getId()
     {
         return id;
