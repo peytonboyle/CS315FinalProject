@@ -15,8 +15,8 @@ public class TestApplication
         User user = createUser();
 
         */
-        String database = "18f315_Daniel";
-        User user = new User( "18f315_Daniel","!Aaa10706140696");
+        String database = "DATABASE";
+        User user = new User("USERNAME", "PASSWORD");
 
         DBConnection dbConnection = new DBConnection(user, database, connectString);
 
