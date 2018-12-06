@@ -1,7 +1,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBJoin extends DBQuery
+public class DBJoin extends DBSQL
 {
 
     public DBJoin( DBConnection dbConnection)

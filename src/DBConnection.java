@@ -8,11 +8,12 @@ public class DBConnection
     Connection connection = null;
 
     //Creates a connection to the database using the info of the user
-    public DBConnection(User user, String host)
+    public DBConnection(User user, String database, String host)
     {
         this.user = user;
         this.host = host;
 
+        this.host = this.host.replaceFirst("DATABASE", database);
         this.host = this.host.replaceFirst("USERNAME", user.getUsername());
         this.host = this.host.replaceFirst("PASSWORD", user.getPassword());
     }

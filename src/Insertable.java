@@ -1,7 +1,7 @@
 import java.sql.SQLException;
 
-public interface Insertable<T>
+public interface Insertable
 {
-    //Inserts values into a Database Table
-    void insert( T data) throws SQLException;
+    //Inserts code into Database
+    void insert(Instance instance) throws SQLException;
 }
