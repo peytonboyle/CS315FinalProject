@@ -1,0 +1,134 @@
+
+
+public class Institutions extends Instance 
+{
+
+   public int instID; 
+   public String instName; 
+   public String instAddress; 
+   public String instCity; 
+   public String instState; 
+   public int instZipcode;
+   public int currClientSize;  
+   public int currPracSize;
+   public int instRating; 
+   
+public Institutions(int id)
+{
+   super(id); 
+}
+
+public void setinstID (String instID)
+{
+  this.instID = instID; 
+}
+public void setinstName (String instName)
+{
+  this.instName = instName; 
+} 
+
+public void setinstAddress ( String instAddress) 
+{
+  this.instAddress = instAddress; 
+}
+
+public void setinstCity( String instCity ) 
+{ 
+  this.instCity = instCity; 
+}
+
+public void setinstState (String instState)
+{
+  this.instState = instState; 
+}
+
+public void setinstZipcode ( int instZipcode)
+{
+  this.instZipcode = instZipcode; 
+}
+
+public void setcurrClientSize(int currClientSize)
+{
+ this.currClientSize = currClientSize; 
+}
+public void setcurrPracSize (int currPracSize)
+{
+  this.currPracSize = currPracSize; 
+}
+public void setinstRating (int instRating)
+{
+  this.instRating = instRating; 
+}
+
+
+
+ 
+public int getinstID()
+{ 
+   return instID;
+}
+
+
+public String getinstName()
+{
+  return instName; 
+}
+
+public String getinstAddress()
+{
+ return instAddress;
+}
+
+public String getinstCity()
+{
+  return instCity; 
+}
+
+public String getinstState()
+{
+  return instState;
+}
+
+public int getinstZipcode()
+{
+  return instZipcode;
+}
+
+public int getcurrClientSize()
+{
+  return currClientSize;
+}
+
+public int getcurrPracSize()
+{
+  return currPracSize;
+}
+
+public int getinstRating()
+{
+  return instRating;
+}
+
+
+@Override 
+public String toString()
+{
+   return( "("+getinstID()+","+ getinstName()+","+ getinstAddress()+","+ getinstCity()+","+ getinstState()+","+ getinstZipcode()+","+ getcurrClientSize()+","+ getcurrPracSize()+ instRating()+")");
+}
+
+@Override
+public boolean equals( Object o)
+    {
+        if( this == o)
+            return true;
+
+        if( o instanceof Patient)
+        {
+            Patient p = (Patient) o;
+            return (this.getId() == p.getId());
+        }
+
+        else
+            return false;
+    }
+}
