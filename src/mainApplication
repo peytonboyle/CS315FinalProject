@@ -1,0 +1,160 @@
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class mainApplication
+{
+    /*
+    //String that connect to database
+    private static final String connectString = "jdbc:mysql://cs.neiu.edu:3306/DATABASE?" +
+            "user=USERNAME&password=PASSWORD&autoReconnect=true&useSSL=false";
+*/
+    public static void main( String args[])
+    {
+        /*
+        
+
+        
+        
+     
+        String database = "DATABASE";
+        User user = new User("USERNAME", "PASSWORD");
+        
+        */
+        
+        User user = createUser();
+        //method call prompt user for database name here
+        
+        
+        DBConnection dbConnection = new DBConnection(user, database, connectString);
+
+        //Connects to Database
+        try
+        {
+            dbConnection.connect();
+            System.out.println("Successfully connected");
+        }
+        catch (SQLException ex)
+        {
+            System.out.println( "Invalid Login");
+            System.exit(1);
+        }
+      /*
+        DBTable patients = new DBTable("Patient", dbConnection);
+        DBTable doctors = new DBTable("Doctor", dbConnection);
+        Patient patient = new Patient();
+        ResultSet rs = null;
+        ResultSetMetaData rsmd = null;
+        try
+        {
+            DBSelect dbSelect = new DBSelect(dbConnection);
+            patients.insert(patient);
+            ResultSetPrinter rsr = new ResultSetPrinter(dbSelect.getSelect(patients));
+            System.out.println(rsr.returnString());
+
+
+        }
+        catch (SQLException ex)
+        {
+            System.out.println("Failed join.");
+            System.exit(1);
+        }
+
+      */
+      
+         System.out.println("Insert a row into which table?");
+         String myTable = kbd.next();
+         if(myTable == "Patient"){
+            for(int i =0,i<9,i++){
+               String[] atemp = new String[9];
+               System.out.println("Please enter a value:");
+               String temp = kbd.next();
+               atemp[i]=temp;
+               i++;
+               }
+               sql=("insert into" + myTable + "values (" + atemp[0]+", " + atemp[1]+", " + atemp[2]", " + atemp[3]", " 
+               + atemp[4]", "  + atemp[5]", " + atemp[6]", " + atemp[7]", " + parseInt(atemp[8])");");
+               
+            }
+            if(myTable == "Institution"){
+            for(int i =0,i<9,i++){
+               String[] atemp = new String[9];
+               System.out.println("Please enter a value:");
+               String temp = kbd.next();
+               atemp[i]=temp;
+               i++;
+               }
+               sql=("insert into" + myTable + "values (" + parseInt(atemp[0])+", " + atemp[1]+", " + atemp[2]", " 
+               + atemp[3]", " + atemp[4]", " + parseInt(atemp[5])", " + parseInt(atemp[6])", " + parseInt(atemp[7])", " + parseInt(atemp[8])");");
+            }
+            if(myTable == "MedicalRecord"){
+            for(int i =0,i<5,i++){
+               String[] atemp = new String[5];
+               System.out.println("Please enter a value:");
+               String temp = kbd.next();
+               atemp[i]=temp;
+               i++;
+               }
+               sql=("insert into" + myTable + "values (" + parseInt(atemp[0])+", " + atemp[1]+", " + atemp[2]", " 
+               + atemp[3]", " + atemp[4]");");
+            }
+            if(myTable == "Practioner"){
+            for(int i =0,i<8,i++){
+               String[] atemp = new String[8];
+               System.out.println("Please enter a value:");
+               String temp = kbd.next();
+               atemp[i]=temp;
+               i++;
+               }
+               sql=("insert into" + myTable + "values (" + parseInt(atemp[0])+", " + atemp[1]+", " + atemp[2]", " 
+               + atemp[3]", " + atemp[4]+", " + atemp[5]+", " + atemp[6]+");");
+            }
+           stmt.executeUpdate(sql);
+            //insert into Practitioner values (x, x, x, x, x, x, x);
+        }
+        //||"MedicalRecord"||"Institution"||"Practitioner"
+        else{
+         System.out.println("Entry Invalid: not a real table");
+        }
+
+
+       System.out.println("Would you like to print from a table?");
+       String answer = kbd.next();
+       if (answer == "Yes"||"yes"||"Y"||"y"){
+       System.out.println("Enter table name:");
+       mytable = kbd.next();
+            if(myTable == "Patient"||"MedicalRecord"||"Institution"||"Practitioner"){
+            sql = ("select * from " + myTable + ";");
+            }
+            
+            else{
+            System.out.println("Entry Invalid: not a real table");
+            }
+            stmt.executeQuery(sql);
+       }
+       else{
+       System.out.println("You're finished");
+       }
+    }
+
+    //Creates a user
+    public static User createUser()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter username:");
+        String username = scanner.next();
+        System.out.print("Enter password:");
+        String password = scanner.next();
+
+        User user = new User(username, password);
+
+        return user;
+    }
+    //cant figure it out need help prompting user for database name and assugning it to the right variable
+    /*
+    public static database promptDB
+    */
+
+}
